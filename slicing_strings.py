@@ -7,13 +7,13 @@ d = hello[-6:]
 e = hello[::2]
 f = hello[::-1]
 
-print(a)
+#print(a)
 
 def make_palindrome(s):
     return s + s[::-1] 
 
 
-print(make_palindrome("abcd"))
+print(make_palindrome("helloWorld"))
 
 
 def add_layer(triangle):
