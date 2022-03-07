@@ -26,11 +26,13 @@ print(make_palindrome("helloWorld"))
 
 def add_layer(triangle):
     last = triangle[-1]  # The most recent row of Pascal's triangle.
+    print('last',last)
     row = []  # Build up the next row.
     for left, right in zip(last + (0,), (0,) + last):
         row.append(left + right)
+        print('row',row)
     triangle.append(tuple(row))
-    print(triangle)
+    print('triangle',triangle)
     
     
 pascals_triangle = [
