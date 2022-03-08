@@ -1,3 +1,6 @@
+import os
+import sys
+
 # Build a set of small words from an explicit tuple of words.
 english_words_small = set((
     "open",
@@ -22,4 +25,7 @@ def load_words_from_filename(filename):
         return set(line.strip().lower() for line in infile)
 
 
-english_words = load_words_from_filename('words.txt')
+words = open("words.txt")
+
+contents = words.read()
+english_words = load_words_from_filename(contents)
