@@ -27,4 +27,4 @@ def load_words_from_filename(filename):
 
 #words = open("words.txt")
 # contents = words.read()
-english_words = load_words_from_filename('words.txt')
+english_words = 'words.txt'
