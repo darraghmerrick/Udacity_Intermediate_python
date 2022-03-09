@@ -38,33 +38,3 @@ if __name__ == '__main__':
         if not again:
             break
 
-
-
-
-import collections
-import functools
-
-def node():
-    return collections.defaultdict(node)
-
-def parse_content(content):
-    words = {}
-    for line in content.split('\n'):
-        word, frequency = line.split()
-        words[word] = int(frequency)
-    return words
-
-def make_tree(words):
-    trie = {}
-    for word, frequency in words.items():
-        node = trie
-        for ch in word:
-            if ch not in node:
-                node[ch] = {}
-            node = node[ch]
-        node[f'${word}'] = frequency
-    return trie
-
-# 1. Find the internal nodes corresponding to the user's supplied letters.
-# 2. Build a collection of all of the words that could be built starting from any of those internal nodes.
-# 3. Sort the possible words by their frequency.
