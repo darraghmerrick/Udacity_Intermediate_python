@@ -38,5 +38,5 @@ if __name__ == '__main__':
         letters1 = input(
             "What letters would you like "
             "to find the anagram of? ").lower().strip()
-        for anagram in find_anagrams(letters1, english_words_small):
+        for anagram in find_anagrams(letters1, english_words):
             print(anagram)
