@@ -1,3 +1,4 @@
+import memoize
 @memoize
 def fib(n):
     if n < 2:
