@@ -1,38 +1,29 @@
-Project: Exploring Near-Earth Objects
-5 minutes remaining
+## Project: Exploring Near-Earth Objects
 
-
-8 of 9 concepts completed
-Submission
-Deliverables
 Upon completing this project, you'll have modified at least models.py, extract.py, database.py, filters.py, and write.py. If you went above-and-beyond with any Stand Out Suggestions, include your changes alongside an EXTENSIONS.md file describing your changes so that the reviewers can understand what you've done.
 
 Over the course of this project (specifically, in Task 4), you've likely created several output files. You should remove these files before submitting your project.
 
-Submitted Files
+## Submitted Files
 Before you submit the project, confirm that it includes all of the required files:
 
-Task List
+## Task List
 
-
-
-
-
-Rubric
+## Rubric
 In addition to the functionality requirements detailed above, your submission will be assessed on how well it follows best practices in Python. Roughly speaking, "best practices" can be divided into two categories - mechanics and design. Good Python mechanics adhere to PEP 8 - the style guide for Python code - and PEP 257 - docstring conventions. These address rules for naming, spacing, commenting, and several common programming patterns. Additionally, good general programming mechanics that you are expected to follow include removing starter code markings, removing extraneous print statements, and documenting your code. Python design refers to the higher-level organization of your code - the interfaces and implementation boundaries defined by your code objects. Many interface and implementation boundaries are already imposed by the organization of the starter code; however, there are still several situations (particularly in Tasks 3 and 4) in which the organization of your code can reflect poorly on or reflect well on the organization of the problem and your choice of solution.  
 
 Complete details on grading criteria are available in the Project Rubric.
 
-PROJECT SPECIFICATION
+## PROJECT SPECIFICATION
 Investigating Near-Earth Objects
 
-Functionality
+## Functionality
 
-CRITERIA
+## CRITERIA
 
 Produce classes that represent near-Earth objects and their close approaches. (Task 1)
 
-MEETS SPECIFICATIONS 
+## MEETS SPECIFICATIONS 
 
 The NearEarthObject class represents a near-Earth object.
 
@@ -43,6 +34,7 @@ diameter: The NEO’s diameter, in kilometers, or NaN.
 hazardous: Whether the NEO is potentially hazardous
 approaches: A collection of this NEO’s CloseApproaches (initially an empty collection).
 The CloseApproach class represents a close approach to Earth by an NEO.
+
 The constructor assigns attributes for:
 time: The date and time, in UTC, at which the NEO passes closest to Earth.
 distance: The nominal approach distance, in astronomical units, of the NEO to Earth at the closest point.
@@ -120,8 +112,8 @@ Submitted code passes all test cases and runs without error.
 
 Style (Mechanics)
 
-CRITERIA
-MEETS SPECIFICATIONS
+## CRITERIA
+## MEETS SPECIFICATIONS
 Produce Python code that satisfies PEP 8.
 
 Submitted code follows the guidelines of PEP 8 - the Style Guide for Python.
@@ -136,10 +128,10 @@ Submit code free from starter code markings.
 
 There are no # TODO comments left in the submitted code. Portions of comments that say # ELABORATE have been filled in with a description of the corresponding code.
 
-Style (Design)
+## Style (Design)
 
-CRITERIA
-MEETS SPECIFICATIONS
+## CRITERIA
+## MEETS SPECIFICATIONS
 Divide attributes appropriately among the NearEarthObject class and the CloseApproach class.
 
 Attributes of NearEarthObjects and CloseApproaches are captured in the constructor from the supplied arguments.
