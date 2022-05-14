@@ -49,15 +49,16 @@ class NEODatabase:
         for approach in self._approaches:
             try:
                 # collects the neo object with the respective designation saved in the approach object
-                near_earth_o = self.designation_mapper[approach._designation]
+                near_earth_object = self.designation_mapper[approach._designation]
 
                 # adds the approach to the neo
-                near_earth_o.approaches.append(approach)
+                near_earth_object.approaches.append(approach)
 
                 # adds the neo object to the current approach
-                approach.neo = near_earth_o
+                approach.neo = near_earth_object
             except:
-                print(f"Neo with the designation {approach._designation} does not exist.")
+                print(
+                    f"Neo with the designation {approach._designation} does not exist.")
 
     def get_neo_by_designation(self, designation):
         """Find and return an NEO by its primary designation.
@@ -99,11 +100,11 @@ class NEODatabase:
         :return: A stream of matching `CloseApproach` objects.
         """
         for approach in self._approaches:
-            # track whether all filters are passed
             all_passed = True
             for custom_filter in filters:
                 if not custom_filter(approach):
                     all_passed = False
                     break
+                # track if all filters are passed
             if all_passed:
                 yield approach
