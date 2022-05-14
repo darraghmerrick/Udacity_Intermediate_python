@@ -113,7 +113,7 @@ class CloseApproach:
         :param distance: (float) closest distance to earth
         :param velocity: (float) in km/s when passing earth
         :param neo: A NEO object
-        :param info: A dictionary of excess keyword arguments supplied to the constructor.
+        :param info: A dictionary of e xcess keyword arguments supplied to the constructor.
         """
         self._designation = str(designation)
 
