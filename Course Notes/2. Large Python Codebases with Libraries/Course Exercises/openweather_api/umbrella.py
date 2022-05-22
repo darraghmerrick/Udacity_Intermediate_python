@@ -6,7 +6,7 @@ def within_time(item, start, end):
     return item['dt'] > start and item['dt'] < end
 
 
-def makeUmbrellaDecision(city, country) -> bool:
+def makeUmbrellaDecision(city, country):
     current_time = time.time()
     end_time = current_time + 12*3600
     wx = WeatherService.getForecast(city, country)

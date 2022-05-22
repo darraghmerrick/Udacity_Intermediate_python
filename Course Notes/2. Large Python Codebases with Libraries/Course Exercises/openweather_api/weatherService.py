@@ -2,7 +2,7 @@ import requests
 
 class WeatherService:
     baseUrl = 'https://api.openweathermap.org/data/2.5'
-    appId = '18fe102b63df96ae75952f0868ce7c05'
+    appId = 'eed455214cea3cef2e417eef8fb1ed57'
 
     @classmethod
     def getForecast(cls, city="new york", country="us"):
