@@ -1,7 +1,7 @@
+import pandas
 from ..IngestorInterface import IngestorInterface
 from ..QuoteModel import QuoteModel
 from typing import List
-import pandas as pd
 
 
 
@@ -33,7 +33,7 @@ class CsvIngestor(IngestorInterface):
                 raise Exception('cannot ingest file')
 
             quotes = []
-            df = pd.read_csv(path)
+            df = pandas.read_csv(path)
 
             for row in df.iterrows():
                 quote = QuoteModel(row['body'], row['author'])

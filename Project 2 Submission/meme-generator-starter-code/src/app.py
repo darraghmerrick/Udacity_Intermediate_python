@@ -1,7 +1,7 @@
 import random
 import os
 import requests
-from QuoteEngine import ingestor
+from QuoteEngine.ingestors import ingestor
 from  MemeEngine import MemeEngine
 from flask import Flask, render_template, abort, request
 
