@@ -1,12 +1,45 @@
+"""Define specific text ingestor."""
+from typing import List
+
+from ..IngestorInterface import IngestorInterface
+from ..QuoteModel import QuoteModel
+
+
 class TextIngestor(IngestorInterface):
-    '''
-    The class inherits the IngestorInterface.
-    The class does not depend on any 3rd party library to complete the defined,
-    abstract method signatures to parse Text files.
-    The parse method returns a valid QuoteModel
-    '''
-    @property
-    def file_types(self):
-        '''Return txt extension type'''
-        return "txt"
+    """Realise the IngestorInterface abstract base class.
+    Implement. specific parse method for .txt files.
+    """
+
+    allowed_extensions = ['txt']
+
+    @classmethod
+    def parse(cls, path: str) -> List[QuoteModel]:
+        """Parse the .txt file to extract quotes.
+        Instantiate QuoteModel objects for each quote.
+        Return list of all QuoteModel Objects created from the file.
+        This method splits on a ' - '. However the method enables
+        the quotes themselves to contain the characters ' - '
+        :param path: the file path to be parsed.
+        """
+        try:
+            if not cls.can_ingest(path):
+                raise Exception('cannot ingest file')
+
+            quotes = []
+            with open(path, 'r', encoding='utf-8-sig') as f:
+                lines = f.readlines()
+                for line in lines:
+                    if len(line) == 0:
+                        pass
+                    parts = line.split(' - ')
+                    author = parts[-1]
+                    body_all = parts[0:len(parts)-1]
+                    body = ' '.join(body_all)
+
+                    new_quote = QuoteModel(body, author)
+                    quotes.append(new_quote)
+
+            return quotes
+        except Exception:
+            raise Exception('Error parsing file')
     

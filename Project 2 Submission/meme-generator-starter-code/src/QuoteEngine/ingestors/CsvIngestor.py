@@ -1,4 +1,4 @@
-import pandas
+#import pandas
 from ..IngestorInterface import IngestorInterface
 from ..QuoteModel import QuoteModel
 from typing import List
@@ -28,17 +28,17 @@ class CsvIngestor(IngestorInterface):
         Return list of all QuoteModel Objects created from the file.
         :param path: the file path to be parsed.
         """
-        try:
+        """try:
             if not cls.can_ingest(path):
                 raise Exception('cannot ingest file')
 
             quotes = []
-            df = pandas.read_csv(path)
+        df = pandas.read_csv(path)
 
             for row in df.iterrows():
                 quote = QuoteModel(row['body'], row['author'])
                 quotes.append(quote)
 
-            return quotes
-        except Exception:
-            raise Exception('Error parsing file')
+        return quotes
+            except Exception:
+            raise Exception('Error parsing file')"""

@@ -2,11 +2,11 @@
 This class encapsulates all the ingestors,
 to provide one interface to load any supported file type."""
 
-from ..IngestorInterface import IngestorInterface
-import DocxIngestor
-import CsvIngestor
-import PDFIngestor
-import TextIngestor
+from .IngestorInterface import IngestorInterface
+from .ingestors import DocxIngestor
+from .ingestors import CsvIngestor
+from .ingestors import PDFIngestor
+from .ingestors import TextIngestor
 
 
 class Ingestor(IngestorInterface):

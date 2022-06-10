@@ -1,15 +1,15 @@
 import random
 import os
 import requests
-from QuoteEngine.ingestors import ingestor
-from  MemeEngine import MemeEngine
+from QuoteEngine import ingestor
+from MemeEngine import MemeEngine
 from flask import Flask, render_template, abort, request
 
 # @TODO Import your Ingestor and MemeEngine classes
 
 app = Flask(__name__)
 
-meme = MemeEngine('./static')
+# meme = MemeEngine('./static')
 
 
 def setup():
