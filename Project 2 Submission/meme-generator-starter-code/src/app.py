@@ -1,7 +1,7 @@
 import random
 import os
 import requests
-from QuoteEngine import ingestor
+from QuoteEngine.ingestor import Ingestor
 from MemeEngine import MemeEngine
 from flask import Flask, render_template, abort, request
 
@@ -15,26 +15,25 @@ app = Flask(__name__)
 def setup():
     """ Load all resources """
 
-    quote_files = ['./_data/DogQuotes/DogQuotesTXT.txt',
-                   './_data/DogQuotes/DogQuotesDOCX.docx',
-                   './_data/DogQuotes/DogQuotesPDF.pdf',
-                   './_data/DogQuotes/DogQuotesCSV.csv']
-
+    quote_files = ['./Engines/_data/DogQuotes/DogQuotesTXT.txt',
+                   './Engines/_data/DogQuotes/DogQuotesDOCX.docx',
+                   './Engines/_data/DogQuotes/DogQuotesCSV.csv']
     quotes = []
-    quotes_directory = './_data/DogQuotes/'
-    for file in os.listdir(quotes_directory):
-        quotes.append(ingestor.parse(f'{quotes_directory}/{file}'))
-    
-    imgs = []
-    images_path = "./_data/photos/dog/"
-    for file in os.listdir(images_path):
-        imgs.append(file)
+    for file in quote_files:
+        list = Ingestor.parse(file)
+        for item in list:
+            quotes.append(item)
 
+    images_path = "./Engines/_data/photos/dog/"
+    imgs = []
+    files = os.listdir(images_path)
+    for file in files:
+        if file.split('.')[-1] == 'jpg':
+            imgs.append(file)
     return quotes, imgs
 
 
 quotes, imgs = setup()
-
 
 @app.route('/')
 def meme_rand():

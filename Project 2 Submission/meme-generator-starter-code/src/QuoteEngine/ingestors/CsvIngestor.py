@@ -1,11 +1,12 @@
-#import pandas
+# pylint: disable=invalid-name
+"""Define the CSV Ingestor class."""
+from typing import List
+import pandas as pd
 from ..IngestorInterface import IngestorInterface
 from ..QuoteModel import QuoteModel
-from typing import List
 
 
-
-class CsvIngestor(IngestorInterface):
+class CsvIngestorvIngestor(IngestorInterface):
 
     '''
     The class inherits the IngestorInterface.
@@ -28,17 +29,17 @@ class CsvIngestor(IngestorInterface):
         Return list of all QuoteModel Objects created from the file.
         :param path: the file path to be parsed.
         """
-        """try:
+        try:
             if not cls.can_ingest(path):
                 raise Exception('cannot ingest file')
 
             quotes = []
-        df = pandas.read_csv(path)
+            df = pd.read_csv(path)
 
             for row in df.iterrows():
                 quote = QuoteModel(row['body'], row['author'])
                 quotes.append(quote)
 
-        return quotes
-            except Exception:
-            raise Exception('Error parsing file')"""
+            return quotes
+        except Exception:
+            raise Exception('Error parsing file')
